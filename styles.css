@@ -1,4 +1,3 @@
-/* Reset simple */
 * {
   margin: 0;
   padding: 0;
@@ -10,29 +9,93 @@ body {
   background-color: #121212;
   color: #fff;
   text-align: center;
-  padding: 20px;
+  padding: 0 20px;
 }
 
+/* Panel superior deslizante estilo marquee */
+#scroll-panel {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #ff5252;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+
+#scroll-panel span {
+  display: inline-block;
+  padding-right: 50px;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Header y menú hamburguesa */
 header {
-  margin-bottom: 30px;
+  margin-top: 60px;
 }
 
-h1 {
-  font-size: 2.5rem;
+.hamburger-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 998;
+}
+
+.hamburger {
+  font-size: 1.8rem;
+  cursor: pointer;
   color: #ff5252;
 }
 
-p {
-  font-size: 1rem;
-  color: #ccc;
+#menu {
+  display: none;
+  flex-direction: column;
+  background-color: #1e1e1e;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+#menu a {
+  color: #ff5252;
+  text-decoration: none;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+#menu a:hover {
+  color: #fff;
+}
+
+#menu.active {
+  display: flex;
 }
 
 /* Grid de productos */
 .productos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr; /* Por defecto 1 columna */
   gap: 20px;
   justify-items: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 /* Tarjetas de productos */
@@ -72,10 +135,9 @@ p {
 /* Footer redes sociales */
 footer {
   margin-top: 50px;
-}
-
-footer p {
-  margin-bottom: 10px;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 15px;
 }
 
 footer a.social {
@@ -93,15 +155,18 @@ footer a.social:hover {
   color: #fff;
 }
 
+#sobre-nosotros-footer {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
 /* Información general */
 .info {
   background-color: #1e1e1e;
   padding: 20px;
   border-radius: 15px;
-  margin-bottom: 30px;
+  margin: 30px auto;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: left;
 }
 
@@ -121,4 +186,27 @@ footer a.social:hover {
   content: "🔹";
   position: absolute;
   left: 0;
+}
+
+/* Selector de visualización */
+.productos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.view-selector button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  background-color: #ff5252;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-selector button:hover {
+  background-color: #ff7979;
 }

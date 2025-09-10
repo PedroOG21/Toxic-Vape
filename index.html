@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>!Toxic_.Vap tu tienda favorita de vapers!</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Iconos redes sociales -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="image/logo2.png">
-
 </head>
-
 <body>
+
+  <!-- Panel superior deslizante -->
+  <div id="scroll-panel">
+    <span>¡Bienvenido a Toxic_.vap! &nbsp; ¡Bienvenido a Toxic_.vap! &nbsp;</span>
+    <span>¡Bienvenido a Toxic_.vap! &nbsp; ¡Bienvenido a Toxic_.vap! &nbsp;</span>
+  </div>
+
+  <!-- Menú hamburguesa -->
   <header>
-    <h1>Toxic_.vap</h1>
-    <p>Tu tienda de vapers favoritos</p>
+    <div class="hamburger-menu">
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <nav id="menu">
+        <a href="#productos">Vapers</a>
+        <a href="#sobre-nosotros">Sobre nosotros</a>
+        <a href="#contacta">Contacta</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Sección de información -->
-  <section class="info">
+  <!-- Información general -->
+  <section class="info" id="sobre-nosotros">
     <ul>
       <li>✅ Desechables, recargables y con voltaje regulable 🔋⚡️</li>
       <li>✅ Nuevos sabores exóticos 🍫🍌🥥🍓</li>
@@ -28,17 +37,30 @@
     </ul>
   </section>
 
+  <!-- Selector de visualización de productos -->
+  <section class="productos-header">
+    <h2>Vaper</h2>
+    <div class="view-selector">
+      <button id="one-col">1 Columna</button>
+      <button id="two-col">2 Columnas</button>
+    </div>
+  </section>
+
+  <!-- Productos -->
   <main>
     <div id="productos" class="productos-grid">
       Cargando productos...
     </div>
   </main>
 
-  <footer>
+  <!-- Footer -->
+  <footer id="contacta">
     <p>Síguenos en nuestras redes:</p>
     <a href="https://www.instagram.com/toxic_.vap?igsh=YmJuY3gxamV0dTE4" target="_blank" class="social"><i class="fab fa-instagram"></i> Instagram</a>
+    <p id="sobre-nosotros-footer">En Toxic_.vap nos apasiona ofrecer los mejores vapers y sabores exóticos para que disfrutes cada experiencia.</p>
   </footer>
 
   <script type="module" src="app.js"></script>
+  <script src="scroll.js"></script>
 </body>
 </html>
