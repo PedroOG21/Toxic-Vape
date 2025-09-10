@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Catálogo Vapers</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Catálogo de Vapers</h1>
+    <p class="subtitle">Título · Foto · Precio · Unidades disponibles</p>
+  </header>
+
+  <main>
+    <section class="catalog">
+      <!-- Producto 1 -->
+      <article class="card">
+        <img src="images/producto1.jpg" alt="Vaper Modelo A" />
+        <h2 class="title">Vaper Modelo A</h2>
+        <p class="price">€29.99</p>
+        <p class="stock">Unidades: <span>12</span></p>
+      </article>
+
+      <!-- Producto 2 -->
+      <article class="card">
+        <img src="images/producto2.jpg" alt="Vaper Modelo B" />
+        <h2 class="title">Vaper Modelo B</h2>
+        <p class="price">€19.50</p>
+        <p class="stock">Unidades: <span>5</span></p>
+      </article>
+
+      <!-- Duplica este bloque para más productos -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Contacto: @tu_instagram • Última actualización: <span id="updated">--/--/----</span></p>
+  </footer>
+
+  <script>
+    // Coloca aquí la fecha de actualización automática si quieres
+    document.getElementById('updated').textContent = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
