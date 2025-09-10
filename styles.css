@@ -12,7 +12,7 @@ body {
   padding: 0 20px;
 }
 
-/* Panel superior deslizante estilo marquee */
+/* Panel superior deslizante */
 #scroll-panel {
   width: 100%;
   overflow: hidden;
@@ -25,13 +25,11 @@ body {
   top: 0;
   left: 0;
   z-index: 999;
-  display: flex;
-  align-items: center;
 }
 
 #scroll-panel span {
   display: inline-block;
-  padding-right: 50px;
+  padding-left: 100%;
   animation: marquee 15s linear infinite;
 }
 
@@ -40,20 +38,23 @@ body {
   100% { transform: translateX(-100%); }
 }
 
-/* Header y menú hamburguesa */
-header {
-  margin-top: 60px;
+/* Navbar fijo debajo del scroll-panel */
+#navbar {
+  position: fixed;
+  top: 40px; /* altura del scroll-panel */
+  width: 100%;
+  z-index: 998;
+  background-color: #1e1e1e;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hamburger-menu {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #1e1e1e;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 998;
+  gap: 20px;
 }
 
 .hamburger {
@@ -62,30 +63,25 @@ header {
   color: #ff5252;
 }
 
+/* Menú desplegable dentro del navbar */
 #menu {
   display: none;
-  flex-direction: column;
-  background-color: #1e1e1e;
-  position: absolute;
-  top: 50px;
-  right: 20px;
-  border-radius: 8px;
-  padding: 10px;
+  gap: 15px;
+}
+
+#menu.active {
+  display: flex;
 }
 
 #menu a {
   color: #ff5252;
   text-decoration: none;
-  margin: 5px 0;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 #menu a:hover {
   color: #fff;
-}
-
-#menu.active {
-  display: flex;
 }
 
 /* Grid de productos */
@@ -94,7 +90,7 @@ header {
   grid-template-columns: 1fr; /* Por defecto 1 columna */
   gap: 20px;
   justify-items: center;
-  margin-top: 20px;
+  margin-top: 120px; /* espacio para scroll-panel + navbar */
   margin-bottom: 50px;
 }
 
@@ -210,3 +206,51 @@ footer a.social:hover {
 .view-selector button:hover {
   background-color: #ff7979;
 }
+
+/* Tarjetas de productos */
+.producto {
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  max-width: 220px;
+  text-align: center;
+}
+
+.producto img {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.producto h2 {
+  font-size: 1.2rem;
+  color: #ff5252;
+  margin-bottom: 5px;
+}
+
+.producto p {
+  font-size: 0.95rem;
+  margin: 3px 0;
+}
+
+/* Cantidad */
+.cantidad {
+  padding: 5px 0;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.verde {
+  background-color: #4CAF50;
+}
+
+.rojo {
+  background-color: #f44336;
+}
+

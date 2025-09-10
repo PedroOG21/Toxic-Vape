@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
 
+// Configuración Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAGk3qkgrY1_YiUtKG6c6P_hS2NJWi6qc",
   authDomain: "toxic-vape.firebaseapp.com",
@@ -24,11 +25,18 @@ function renderProductos(snapshot) {
     const producto = childSnapshot.val();
     const div = document.createElement("div");
     div.className = "producto";
+
+    // Cantidad con color según stock
+    const cantidadHTML = producto.cantidad >= 1
+      ? `<div class="cantidad verde">${producto.cantidad}</div>`
+      : `<div class="cantidad rojo">Agotado</div>`;
+
     div.innerHTML = `
       <h2>${producto.nombre}</h2>
-      <p>Precio: €${producto.precio}</p>
+      <img src="${producto.imagen}" alt="${producto.nombre}">
       <p>Nicotina: ${producto.nicotina}%</p>
-      <img src="${producto.imagen}" alt="${producto.nombre}" width="150">
+      <p>Precio: €${producto.precio}</p>
+      ${cantidadHTML}
     `;
     productosDiv.appendChild(div);
   });
@@ -44,9 +52,18 @@ document.getElementById('two-col').addEventListener('click', () => {
   productosDiv.style.gridTemplateColumns = 'repeat(2, 1fr)';
 });
 
-// Menú hamburguesa
+// Menú hamburguesa funcional
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
+
 hamburger.addEventListener('click', () => {
   menu.classList.toggle('active');
+});
+
+// Ocultar menú al hacer click en un enlace
+const menuLinks = document.querySelectorAll('#menu a');
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('active');
+  });
 });
