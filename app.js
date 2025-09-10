@@ -42,3 +42,17 @@ function renderProductos(snapshot) {
 
 // Escuchar cambios en Firebase en tiempo real
 onValue(productosRef, renderProductos);
+
+snapshot.forEach(childSnapshot => {
+  const producto = childSnapshot.val();
+  const div = document.createElement("div");
+  div.className = "producto";
+  div.innerHTML = `
+    <h2>${producto.nombre}</h2>
+    <p>Precio: €${producto.precio}</p>
+    <p>Nicotina: ${producto.nicotina}%</p>
+    ${producto.entrega ? `<p class="entrega">${producto.entrega}</p>` : ""}
+    <img src="${producto.imagen}" alt="${producto.nombre}" width="150">
+  `;
+  productosDiv.appendChild(div);
+});
