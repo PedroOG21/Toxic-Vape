@@ -36,25 +36,20 @@ body {
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
-}
-
-/* Navbar */
+}/* Navbar */
 #navbar {
   position: fixed;
   top: 40px;
   width: 100%;
   z-index: 998;
-  background-color: rgba(30,30,30,0.9); /* transparente */
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .hamburger-menu {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  position: relative;
 }
 
 .hamburger {
@@ -63,9 +58,18 @@ body {
   color: #ff5252;
 }
 
+/* Menú vertical desplegable a la derecha */
 #menu {
   display: none;
-  gap: 15px;
+  flex-direction: column; /* vertical */
+  position: absolute;
+  top: 0;  /* alineado con el botón */
+  left: 40px; /* se despliega a la derecha del botón */
+  background-color: #222;
+  border-radius: 10px;
+  padding: 10px;
+  width: 180px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 #menu.active {
@@ -76,12 +80,20 @@ body {
   color: #ff5252;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1rem;
+  padding: 10px 5px;
+  border-bottom: 1px solid #444;
+}
+
+#menu a:last-child {
+  border-bottom: none;
 }
 
 #menu a:hover {
   color: #fff;
+  background-color: #333;
+  border-radius: 5px;
 }
+
 
 /* Grid productos */
 .productos-grid {
