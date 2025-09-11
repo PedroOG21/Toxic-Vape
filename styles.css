@@ -5,14 +5,14 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #121212;
   color: #fff;
   text-align: center;
   padding: 0 20px;
 }
 
-/* Panel superior deslizante */
+/* Panel superior */
 #scroll-panel {
   width: 100%;
   overflow: hidden;
@@ -38,13 +38,13 @@ body {
   100% { transform: translateX(-100%); }
 }
 
-/* Navbar fijo debajo del scroll-panel */
+/* Navbar */
 #navbar {
   position: fixed;
-  top: 40px; /* altura del scroll-panel */
+  top: 40px;
   width: 100%;
   z-index: 998;
-  background-color: #1e1e1e;
+  background-color: rgba(30,30,30,0.9); /* transparente */
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -63,7 +63,6 @@ body {
   color: #ff5252;
 }
 
-/* Menú desplegable dentro del navbar */
 #menu {
   display: none;
   gap: 15px;
@@ -84,130 +83,16 @@ body {
   color: #fff;
 }
 
-/* Grid de productos */
+/* Grid productos */
 .productos-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Por defecto 1 columna */
+  grid-template-columns: 1fr;
   gap: 20px;
   justify-items: center;
-  margin-top: 120px; /* espacio para scroll-panel + navbar */
+  margin-top: 120px;
   margin-bottom: 50px;
 }
 
-/* Tarjetas de productos */
-.producto {
-  background-color: #1e1e1e;
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  transition: transform 0.2s, box-shadow 0.2s;
-  width: 100%;
-  max-width: 220px;
-}
-
-.producto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
-}
-
-.producto img {
-  border-radius: 10px;
-  margin-bottom: 10px;
-  width: 100%;
-  height: auto;
-}
-
-.producto h2 {
-  font-size: 1.2rem;
-  color: #ff5252;
-  margin-bottom: 5px;
-}
-
-.producto p {
-  font-size: 0.95rem;
-  margin: 3px 0;
-}
-
-/* Footer redes sociales */
-footer {
-  margin-top: 50px;
-  padding: 20px;
-  background-color: #1e1e1e;
-  border-radius: 15px;
-}
-
-footer a.social {
-  color: #ff5252;
-  text-decoration: none;
-  font-size: 1.1rem;
-  margin: 0 10px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  transition: color 0.2s;
-}
-
-footer a.social:hover {
-  color: #fff;
-}
-
-#sobre-nosotros-footer {
-  margin-top: 10px;
-  font-size: 0.95rem;
-}
-
-/* Información general */
-.info {
-  background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 15px;
-  margin: 30px auto;
-  max-width: 800px;
-  text-align: left;
-}
-
-.info ul {
-  list-style: none;
-}
-
-.info li {
-  font-size: 1rem;
-  margin: 10px 0;
-  padding-left: 25px;
-  position: relative;
-  color: #fff;
-}
-
-.info li::before {
-  content: "🔹";
-  position: absolute;
-  left: 0;
-}
-
-/* Selector de visualización */
-.productos-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-.view-selector button {
-  padding: 5px 10px;
-  margin-left: 5px;
-  background-color: #ff5252;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.view-selector button:hover {
-  background-color: #ff7979;
-}
-
-/* Tarjetas de productos */
 .producto {
   background-color: #1e1e1e;
   padding: 15px;
@@ -246,11 +131,139 @@ footer a.social:hover {
   color: #fff;
 }
 
-.verde {
-  background-color: #4CAF50;
+.verde { background-color: #4CAF50; }
+.rojo { background-color: #f44336; }
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 15px;
 }
 
-.rojo {
-  background-color: #f44336;
+footer a.social {
+  color: #ff5252;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
 }
 
+footer a.social:hover {
+  color: #fff;
+}
+
+#sobre-nosotros-footer {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.info {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 30px auto;
+  max-width: 800px;
+  text-align: left;
+}
+
+.info ul { list-style: none; }
+
+.info li {
+  font-size: 1rem;
+  margin: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  color: #fff;
+}
+
+.info li::before {
+  content: "🔹";
+  position: absolute;
+  left: 0;
+}
+
+.productos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.view-selector button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  background-color: #ff5252;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-selector button:hover {
+  background-color: #ff7979;
+}
+
+/* Logo */
+.logo {
+  width: 180px;
+  margin: 20px 0;
+}
+
+/* Scroll ocultar panel */
+/* Existing CSS ... */
+
+/* Modal login */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background-color: #1e1e1e;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content input {
+  width: 90%;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.modal-content button {
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #ff7979;
+}
+
+#close-login {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}

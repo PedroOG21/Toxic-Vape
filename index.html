@@ -15,28 +15,23 @@
     <span>¡Bienvenido a Toxic_.vap! &nbsp;&nbsp;&nbsp;&nbsp;</span>
   </div>
 
-  <!-- Menú hamburguesa fijo -->
-  <!-- Menú hamburguesa fijo con logo -->
-<header id="navbar">
+  <!-- Navbar -->
+  <header id="navbar">
+    <div class="hamburger-menu">
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <nav id="menu">
+        <a href="#productos">Vapers</a>
+        <a href="#sobre-nosotros">Sobre nosotros</a>
+        <a href="#contacta">Contacta</a>
+        <a href="#" id="admin-link">Administración</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="hamburger-menu">
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <nav id="menu">
-      <a href="#productos">Vapers</a>
-      <a href="#sobre-nosotros">Sobre nosotros</a>
-      <a href="#contacta">Contacta</a>
-    </nav>
-  </div>
-</header>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  
-  <img src="image/logo2.png" alt="Toxic Vape Logo" width="120">
+  <br><br><br><br><br><br><br>
+
+  <img src="image/logo2.png" alt="Toxic Vape Logo" width="180">
+
   <!-- Información general -->
   <section class="info" id="sobre-nosotros">
     <ul>
@@ -54,6 +49,18 @@
       <button id="two-col">2 Columnas</button>
     </div>
   </section>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-login">&times;</span>
+      <h2>Login Administrador</h2>
+      <input type="email" id="admin-email" placeholder="Correo electrónico">
+      <input type="password" id="admin-password" placeholder="Contraseña">
+      <button id="login-btn">Ingresar</button>
+      <p id="login-error" style="color:red;"></p>
+    </div>
+  </div>
 
   <!-- Productos -->
   <main>
